@@ -7,6 +7,29 @@ This file provides context and instructions for AI coding agents (Copilot, Curso
 This is a Terraform module for [STACKIT](https://www.stackit.de/en/), the cloud platform by Schwarz Group.
 It is part of the [terraform-stackit-modules](https://github.com/terraform-stackit-modules) organization, which aims to provide community-maintained, production-grade Terraform modules for STACKIT.
 
+### This module: secrets-manager
+
+Composite module for STACKIT **Secrets Manager** (instance + users).
+
+**Sub-modules**
+- `modules/instance` — `stackit_secretsmanager_instance` (toggled by `create_instance` via `count`),
+  optional `kms_key` for encryption.
+- `modules/user` — `stackit_secretsmanager_user` (`for_each` over `users`).
+
+**Key inputs** — `project_id` (req), `create_instance`/`instance_id`, `name`, `acls` (set of CIDR),
+`kms_key` ({key_id, key_ring_id, key_version, service_account_email}),
+`users` (map keyed by stable id: `{description, write_enabled, rotate_when_changed?}`).
+
+**Outputs** — `instance_id`, `user_ids`, `usernames`, `user_passwords` (sensitive).
+
+**Gotchas**
+- NO `region` argument on either resource — region-agnostic like dns. Adding it fails with
+  "argument named region is not expected here". This module has no region variable.
+- User `username`/`password` are AUTO-GENERATED (not user-chosen); `description` + `write_enabled`
+  are required and `description` is immutable after creation.
+- `users` keyed by a stable id; instance_id (known-after-apply) is only an attribute, never a
+  for_each key. password output is `sensitive = true`.
+
 ## Repository structure
 
 ```
