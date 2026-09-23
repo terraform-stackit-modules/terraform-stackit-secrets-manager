@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.0 (2026-09-23)
+
+### Features
+
+* Initial STACKIT Secrets Manager module ([98fa13a](https://github.com/terraform-stackit-modules/terraform-stackit-secrets-manager/commit/98fa13a8bac3612bf563e5d190083c58b4532a3c))
+
 ## [1.0.1](https://github.com/terraform-stackit-modules/terraform-repo-template/compare/v1.0.0...v1.0.1) (2026-09-09)
 
 ### Bug Fixes
