@@ -4,6 +4,7 @@
 Terraform module which provisions a [STACKIT Secrets Manager](https://registry.terraform.io/providers/stackitcloud/stackit/latest/docs/resources/secretsmanager_instance) instance and its users on [STACKIT](https://www.stackit.de/en/).
 
 [![Terraform Registry](https://img.shields.io/github/v/release/terraform-stackit-modules/terraform-stackit-secrets-manager?label=registry&color=7B42BC&logo=terraform&logoColor=white&style=flat)](https://registry.terraform.io/modules/terraform-stackit-modules/secrets-manager/stackit/latest)
+[![OpenTofu Registry](https://img.shields.io/badge/OpenTofu-Registry-FF643B?style=flat&logo=opentofu&logoColor=white)](https://registry.opentofu.org/modules/terraform-stackit-modules/secrets-manager/stackit/latest)
 [![License](https://img.shields.io/github/license/terraform-stackit-modules/terraform-stackit-secrets-manager)](./LICENSE)
 
 This repository is not from the official STACKIT organization.
